@@ -2,11 +2,20 @@
 -- Only show relative line numbers in currently active buffer
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*",
-    command = "setlocal relativenumber"
+    callback = function(args)
+        if vim.bo[args.buf].buftype == "" then -- Only show line number is buffer is actualy a file
+            vim.api.nvim_command(":setlocal relativenumber")
+        end
+    end
 })
+
 vim.api.nvim_create_autocmd({ "BufLeave" }, {
     pattern = "*",
-    command = "setlocal norelativenumber"
+    callback = function(args)
+        if vim.bo[args.buf].buftype == "" then
+            vim.api.nvim_command(":setlocal norelativenumber")
+        end
+    end
 })
 
 -- Highlight copied text for half a second
