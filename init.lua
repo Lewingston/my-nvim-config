@@ -11,7 +11,7 @@ vim.g.netrw_liststyle = 3    -- Enable tree view in netrw file browser (there mi
 vim.g.netrw_winsize = -40    -- Set size of netrw file browser window (negative number is character width; positive number is percent of screen)
 ]]
 
-vim.opt.title = true -- Enable title bar (does not work!)
+-- vim.opt.title = true -- Enable title bar
 
 vim.opt.number = true         -- Enable line numbers
 vim.opt.relativenumber = true -- Enable relative line numbers
@@ -48,3 +48,6 @@ require("config.lsp")
 
 -- Load auto commands
 require("config.autocmd")
+
+-- Load custom user commands
+require("config.usercmd")
