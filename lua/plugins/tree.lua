@@ -16,6 +16,10 @@ return {
         require("nvim-tree").setup {
             view = {
                 width = 40
+            },
+            diagnostics = {
+                enable = true,
+                show_on_dirs = true
             }
         }
 
