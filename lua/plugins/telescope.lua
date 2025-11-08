@@ -12,7 +12,7 @@ return {
                 vimgrep_arguments = {
                     'rg',
                     '--color=never',
-                    '--ho-heading',
+                    '--no-heading',
                     '--with-filename',
                     '--line-number',
                     '--column',
@@ -58,9 +58,9 @@ return {
 
         vim.keymap.set("n", "<leader>fb", builtin.buffers)
 
-        vim.keymap.set("n", "<leader>F", builtin.live_grep)
+        vim.keymap.set("n", "<leader>F", builtin.grep_string)
 
-        vim.keymap.set("n", "<leader>fF", builtin.grep_string)
+        vim.keymap.set("n", "<leader>fF", builtin.live_grep)
 
         vim.keymap.set("n", "<leader>fi", builtin.current_buffer_fuzzy_find)
 
