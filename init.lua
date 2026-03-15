@@ -35,6 +35,10 @@ vim.opt.listchars = {
 }
 vim.opt.list = true -- Enable display of non visible characters
 
+-- Enable spell checking
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
+
 -- vim.cmd.colorscheme = "unokai" -- Build in unokai color theme
 
 -- Load lazy vim packet manager
