@@ -13,6 +13,14 @@ vim.g.netrw_winsize = -40    -- Set size of netrw file browser window (negative 
 
 -- vim.opt.title = true -- Enable title bar
 
+vim.opt.fileformat = "unix" -- Use unix file endings
+
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+    callback = function()
+        vim.opt_local.fileformat = "unix"
+    end,
+})
+
 vim.opt.number = true         -- Enable line numbers
 vim.opt.relativenumber = true -- Enable relative line numbers
 vim.opt.tabstop = 4           -- Tab is 4 spaces width
@@ -34,6 +42,12 @@ vim.opt.listchars = {
     extends = '»'
 }
 vim.opt.list = true -- Enable display of non visible characters
+
+vim.filetype.add({
+    extension = {
+        wgsl = "wgsl"
+    }
+})
 
 -- Enable spell checking
 vim.opt.spell = true
